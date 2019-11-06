@@ -1,0 +1,54 @@
+@import "controls";
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  height: 100%;
+
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background: #fafafa;
+  display: flex;
+}
+
+.main-content{
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.link{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  font-size: 20px;
+  background: #fafafa;
+  color: #000;
+  text-decoration: none;
+  &:hover:not(.active){
+    background: #e8e8e8;
+    cursor: pointer;
+  }
+}
+
+.link.active{
+  background: #dedede;
+  &:hover{
+    cursor: default;
+  }
+}

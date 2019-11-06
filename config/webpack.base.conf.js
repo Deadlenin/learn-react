@@ -23,7 +23,7 @@ module.exports = {
         reactLearn: PATHS.src,
     },
     output: {
-        filename: `${PATHS.assets}js/[name].[hash].js`,
+        filename: `js/[name].[hash].js`,
         path: PATHS.dist,
         publicPath: '/'
     },
@@ -103,17 +103,19 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.json','.scss'],
         alias: {
             '~': PATHS.src,
         }
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/[name].[hash].css`,
+            //filename: `${PATHS.assets}css/[name].[hash].css`,
+            filename: `css/[name].[hash].css`,
         }),
         new CopyWebpackPlugin([
-            { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+            { from: `${PATHS.src}/${PATHS.assets}img`, to: `img` },
+            //{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
             //{ from: `${PATHS.src}/static`, to: '' },
         ]),
         new HtmlWebpackPlugin( {
